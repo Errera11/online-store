@@ -26,7 +26,6 @@ CartItem.belongsTo(Cart);
 const Item = sequelize.define('item', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
-    description: {type: DataTypes.STRING},
     price: {type: DataTypes.INTEGER, allowNull: false},
     rating: {type: DataTypes.STRING, defaultValue: 0},
     image: {type: DataTypes.STRING},
@@ -60,7 +59,7 @@ const Brand = sequelize.define('brand', {
     name: {type: DataTypes.STRING, unique: true, allowNull: false}
 })
 
-const Type = sequelize.define('brand', {
+const Type = sequelize.define('type', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false}
 })

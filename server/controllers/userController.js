@@ -22,7 +22,7 @@ class UserController {
 
     }
 
-    async signUp(req, res) {
+    async signUp(req, res, next) {
         const error = validationResult(req);
         if(!error.isEmpty()) {
             return next(ApiError.BadRequest("Invalid email or password", error.array()));
@@ -36,10 +36,17 @@ class UserController {
         }
     }
 
-    async auth(req, res) {
-        res.status(200).json({message: 'woow'})
-    }
+    async auth(user, req, res, next) {
+        try {
 
+            if(!user.id) throw user;
+            const data = userService.auth(user)
+            req.user = data.user;
+            res.json(data.token)
+        } catch(e) {
+            next(e)
+        }
+    }
 }
 
 module.exports = new UserController()

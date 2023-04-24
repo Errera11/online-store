@@ -1,11 +1,25 @@
 import './App.css';
+import Navbar from "./components/navbar/Navbar";
+import AppRouter from "./components/AppRouter";
+import {BrowserRouter} from "react-router-dom";
+import {createContext} from "react";
+import UserStore from './store/UserStore';
+
+export const Context = createContext()
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+    return (
+        <Context.Provider value={
+            {
+                user: new UserStore()
+            }
+        }>
+            <BrowserRouter>
+                <Navbar/>
+                <AppRouter/>
+            </BrowserRouter>
+        </Context.Provider>
+    );
 }
 
 export default App;

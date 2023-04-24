@@ -1,0 +1,19 @@
+.auth {
+    @apply p-4 flex justify-center items-center mt-20
+
+    ;
+}
+
+.container {
+    @apply flex justify-center items-center border-black border rounded-xl
+        p-8 flex-col
+    ;
+}
+
+.container input {
+    @apply p-1 m-3;
+}
+
+.btns {
+    @apply flex flex-row justify-between w-3/4;
+}

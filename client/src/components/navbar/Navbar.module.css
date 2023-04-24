@@ -1,0 +1,27 @@
+.navbar {
+    @apply mt-[0px] h-[70px];
+}
+
+.container {
+    @apply bg-amber-50 fixed flex justify-between items-center w-full;
+}
+
+.btns {
+    @apply flex;
+}
+
+.btn {
+    @apply p-[8px] cursor-pointer rounded-2xl;
+}
+
+.btn:hover {
+    @apply bg-black text-white duration-700 cursor-pointer;
+}
+
+.title {
+    @apply m-[18px];
+}
+
+.btn {
+    @apply m-[18px];
+}

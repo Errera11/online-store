@@ -1,18 +1,15 @@
 import React from 'react';
-import styles from './Auth.module.css'
+import {NavLink, useLocation} from "react-router-dom";
+import {SIGN_IN_ROUTE} from "../../utils/route_constants";
+import SignIn from "./signIn";
+import SignUp from "./signUp";
 const Auth = () => {
+    const location = useLocation()
+    const signIn = location.pathname == SIGN_IN_ROUTE;
     return (
-        <div className={styles.auth}>
-            <div className={styles.container}>
-                Auth
-                <input type={'text'} placeholder={'email'}/>
-                <input type={'text'} placeholder={'password'}/>
-                <div className={styles.btns}>
-                    <button>Auth</button>
-                    <div>Already</div>
-                </div>
-            </div>
-        </div>
+        <>
+            {signIn ? <SignIn /> : <SignUp />}
+        </>
     );
 };
 

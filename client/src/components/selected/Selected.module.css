@@ -1,0 +1,7 @@
+.item {
+    @apply m-6 cursor-pointer p-3 text-center;
+}
+
+.active {
+    @apply text-white bg-black rounded-2xl duration-500;
+}

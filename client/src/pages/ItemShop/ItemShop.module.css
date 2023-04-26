@@ -1,0 +1,15 @@
+.container {
+    @apply m-8;
+}
+
+.brands {
+    @apply ml-5 w-11/12 bg-blue-50 rounded-2xl;
+}
+
+.types {
+    @apply absolute w-2/12 m-5 bg-blue-50 text-center box-content rounded-2xl mt-20;
+}
+
+.items {
+    @apply ml-auto mr-14 w-3/4 mt-20;
+}

@@ -1,6 +1,6 @@
 import ItemShop from './pages/ItemShop/ItemShop';
-import Admin from './pages/Admin';
-import ItemPage from './pages/ItemPage';
+import Admin from './pages/admin/Admin';
+import ItemPage from './pages/itemPage/ItemPage';
 import Auth from './pages/auth/Auth';
 import Cart from './pages/Cart';
 import {

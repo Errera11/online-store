@@ -3,6 +3,7 @@ import Button from "../button/Button";
 import Modal from "../Modal";
 import {Context} from "../../App";
 
+
 const CreateItem = ({onHide, show}) => {
     const {devices} = useContext(Context)
     const [name, setName] = useState('')
@@ -10,6 +11,16 @@ const CreateItem = ({onHide, show}) => {
     const [file, setFile] = useState()
     const [brand, setBrand] = useState(0)
     const [type, setType] = useState(0)
+    const [info, setInfo] = useState([{id: new Date(), title: '', description: ''}])
+
+    const deleteInfo = (id) => {
+        setInfo([...info.filter(item => item.id !== id)]);
+        console.log(info)
+        if (info.length < 1) setInfo([{id: new Date(), title: '', description: ''}]);
+    }
+    const addInfo = () => {
+        setInfo([...info, {id: new Date(), title: '', description: ''}]);
+    }
 
     return (
         <Modal onHide={onHide} show={show}>
@@ -35,12 +46,35 @@ const CreateItem = ({onHide, show}) => {
             </div>
             <div className={'p-2 m-4'}>
                 <select className={'p-4 border-none w-2/3'}
-                    onChange={e => setBrand(e.target.value)}>
+                        onChange={e => setBrand(e.target.value)}>
                     {devices.brands.map(brand => {
                         return <option value={brand.id}>{brand.name}</option>
                     })}
                 </select>
             </div>
+            <div>
+                <div>Characteristics</div>
+                <div className={'flex flex-col '}>{info.map((item, index) => {
+                    if(index + 1 == info.length) return
+                    return <div className={'flex flex-row m-2 justify-center'}>
+                        <div>{item.title}:      {item.description}  </div>
+                        <div className={'cursor-pointer ml-2'} onClick={() => deleteInfo(item.id)}>X</div>
+                    </div>
+                })}</div>
+
+            </div>
+            <input className={'p-2 m-2 border-2 border-black rounded-s'} type={'text'} placeholder={'Info title'} onChange={e => {
+                const item = info.pop();
+                item.title = e.target.value;
+                setInfo([...info, {...item}])
+            }}/>
+            <input className={'p-2 m-2 border-2 border-black rounded-s'} type={'text'} placeholder={'Info description'}
+                   onChange={e => {
+                       const item = info.pop();
+                       item.description = e.target.value;
+                       setInfo([...info, item])
+                   }}/>
+            <Button onClick={() => addInfo()}>Add characteristic</Button>
             <Button>Create item</Button>
         </Modal>
     );

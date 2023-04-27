@@ -6,9 +6,9 @@ const CreateType = ({onHide, show}) => {
     const [name, setName] = useState('')
     return (
         <Modal onHide={onHide} show={show}>
-            <div className={'mb-8'}>Create Ензу</div>
+            <div className={'mb-8'}>Create Type</div>
             <input className={'p-2 m-4 rounded-2xl'}
-                   placeholder={'Ензу name'}
+                   placeholder={'Type name'}
                    value={name}
                    onChange={e => setName(e.target.value)}/>
             <Button>Create type</Button>

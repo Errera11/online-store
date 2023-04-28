@@ -11,11 +11,10 @@ const CreateItem = ({onHide, show}) => {
     const [file, setFile] = useState()
     const [brand, setBrand] = useState(0)
     const [type, setType] = useState(0)
-    const [info, setInfo] = useState([{id: new Date(), title: '', description: ''}])
+    const [info, setInfo] = useState([[{id: new Date(), title: '', description: ''}]])
 
     const deleteInfo = (id) => {
         setInfo([...info.filter(item => item.id !== id)]);
-        console.log(info)
         if (info.length < 1) setInfo([{id: new Date(), title: '', description: ''}]);
     }
     const addInfo = () => {
@@ -56,7 +55,7 @@ const CreateItem = ({onHide, show}) => {
                 <div>Characteristics</div>
                 <div className={'flex flex-col '}>{info.map((item, index) => {
                     if(index + 1 == info.length) return
-                    return <div className={'flex flex-row m-2 justify-center'}>
+                    return <div key={item.id} className={'flex flex-row m-2 justify-center'}>
                         <div>{item.title}:      {item.description}  </div>
                         <div className={'cursor-pointer ml-2'} onClick={() => deleteInfo(item.id)}>X</div>
                     </div>

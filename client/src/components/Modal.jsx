@@ -4,7 +4,7 @@ import Button from "./button/Button";
 const Modal = ({show, onHide, children}) => {
     return (
         <div className={show ? '' +
-            'w-screen mb-4 absolute duration-1000' : 'hidden'}>
+            'w-screen mb-4 absolute' : 'hidden'}>
             <div className={'fixed bg-blue-50/90 w-screen h-screen'} onClick={onHide}/>
             <div className={'flex justify-center m-auto'}>
                 <div className={'text-center z-10 absolute bg-white/50 rounded-2xl p-10'}>

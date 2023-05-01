@@ -1,0 +1,20 @@
+.navbar {
+    @apply mt-[0px] h-[70px];
+}
+
+.container {
+    @apply z-10 bg-blue-50 fixed flex justify-between items-center w-full;
+}
+
+.btns {
+    @apply flex;
+}
+
+
+.title {
+    @apply m-[18px];
+}
+
+.btn {
+    @apply m-[18px];
+}

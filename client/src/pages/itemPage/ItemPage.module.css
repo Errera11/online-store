@@ -1,0 +1,20 @@
+.container {
+    @apply m-10 w-11/12;
+}
+
+.container .view div {
+    @apply w-4/5 mx-10;
+}
+
+.view {
+    @apply flex flex-row;
+}
+
+
+.price {
+    @apply flex flex-col justify-between p-10 items-center ;
+}
+
+.rate {
+    @apply relative;
+}

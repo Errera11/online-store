@@ -1,0 +1,11 @@
+.item {
+    @apply cursor-pointer w-[210px] h-[290px] justify-center;
+}
+
+.item div {
+    @apply flex justify-center;
+}
+
+.container {
+    @apply flex flex-wrap ;
+}

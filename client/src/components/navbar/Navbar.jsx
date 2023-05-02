@@ -3,8 +3,9 @@ import styles from "./Navbar.module.css"
 import {NavLink, useNavigate} from "react-router-dom";
 import Button from "../button/Button";
 import {Context} from "../../App";
+import {observer} from "mobx-react-lite";
 
-const Navbar = () => {
+const Navbar = observer(() => {
     const navigate = useNavigate()
     const {user} = useContext(Context)
     return (
@@ -37,6 +38,6 @@ const Navbar = () => {
         </div>
     )
         ;
-};
+});
 
 export default Navbar;

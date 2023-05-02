@@ -14,17 +14,17 @@ const Auth = () => {
     if(isSignIn) {
         const signInHandler = async (email, password) => {
             const response = await signInApi({email, password});
-            const user = jwt_decode(response);
-            user.isAuth(true)
-            user.user(user);
+            const decodedUser = jwt_decode(response.data.token);
+            user.isAuth = true
+            user.user = decodedUser;
         }
         return <><SignIn onClick={signInHandler}/></>
     }
     const signUpHandler = async (email, password) => {
         const response = await signUpApi({email, password});
-        const user = jwt_decode(response);
-        user.isAuth(true)
-        user.setUser(user);
+        const decodedUser = jwt_decode(response.data.token);
+        user.isAuth = true
+        user.user = decodedUser;
     }
     return <><SignUp onClick={signUpHandler}/></>
 };

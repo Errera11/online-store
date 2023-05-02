@@ -18,10 +18,9 @@ const SignUp = ({onClick}) => {
                     type={'password'} placeholder={'password'}/>
                 <div className={styles.btns}>
                     <div >Already have an <NavLink className='border-b-4 border-blue-50 rounded-b-md hover:border-red-50 duration-700 ' to={'/signIn'}>account?</NavLink></div>
-                    <Button onClick={() => {
-                        console.log(onClick)
+                    <Button onClick={() =>
                         onClick(email, password)
-                    }}>Sign Up</Button>
+                    }>Sign Up</Button>
                 </div>
             </div>
         </div>

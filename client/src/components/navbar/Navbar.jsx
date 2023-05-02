@@ -1,24 +1,38 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from "./Navbar.module.css"
 import {NavLink, useNavigate} from "react-router-dom";
 import Button from "../button/Button";
+import {Context} from "../../App";
 
 const Navbar = () => {
     const navigate = useNavigate()
+    const {user} = useContext(Context)
     return (
         <div className={styles.navbar}>
             <div className={styles.container}>
                 <div className={styles.title}>
                     <NavLink to={'/'}>Store</NavLink>
                 </div>
-                <div className={styles.btns}>
-                    <div className={styles.btn} onClick={() => navigate('/signIn')}>
-                        <Button>Sign In</Button>
+                {user.isAuth ?
+                    <div className={styles.btns + ' ' + 'mr-5'}>
+                        <div>
+                            {user.name}
+                        </div>
+                        <div>
+                            Admin
+                        </div>
                     </div>
-                    <div className={styles.btn} onClick={() => navigate('/signUp')}>
-                        <Button>Sign Up</Button>
+                    :
+                    <div className={styles.btns}>
+                        <div className={styles.btn} onClick={() => navigate('/signIn')}>
+                            <Button>Sign In</Button>
+                        </div>
+                        <div className={styles.btn} onClick={() => navigate('/signUp')}>
+                            <Button>Sign Up</Button>
+                        </div>
                     </div>
-                </div>
+                }
+
             </div>
         </div>
     )

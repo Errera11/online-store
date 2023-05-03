@@ -17,7 +17,7 @@ const Navbar = observer(() => {
                 {user.isAuth ?
                     <div className={styles.btns + ' ' + 'mr-5'}>
                         <div>
-                            {user.name}
+                            {user.email}
                         </div>
                         <div>
                             Admin

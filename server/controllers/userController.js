@@ -10,7 +10,7 @@ class UserController {
         console.log(error)
         if(!error.isEmpty()) {
             console.log(error)
-            return next(ApiError.BadRequest("Invalid email or password", error.array()));
+            return next(ApiError.BadRequest({message: "Invalid email or password"}, error.array()));
         }
         try {
             const {email, password} = req.body;
@@ -25,7 +25,7 @@ class UserController {
     async signUp(req, res, next) {
         const error = validationResult(req);
         if(!error.isEmpty()) {
-            return next(ApiError.BadRequest("Invalid email or password", error.array()));
+            return next(ApiError.BadRequest({message: "Invalid email or password"}, error.array()));
         }
         try {
             const {email, password} = req.body;

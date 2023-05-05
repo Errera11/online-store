@@ -13,7 +13,7 @@ class UserService {
         const user = await User.findOne({where: {email}});
         if(!user) throw ApiError.BadRequest({message: "Incorrect email or password"});
         const isPassword = bcrypt.compareSync(password, user.password);
-        if(!isPassword) throw ApiError.BadRequest("Incorrect email or password");
+        if(!isPassword) throw ApiError.BadRequest({message: "Incorrect email or password"});
         return jwtToken(user.id, user.email, user.role);
     }
 

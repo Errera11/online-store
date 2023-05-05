@@ -6,6 +6,7 @@ import {Context} from "../../App";
 import {observer} from "mobx-react-lite";
 
 const Navbar = observer(() => {
+
     const navigate = useNavigate()
     const {user} = useContext(Context)
     return (
@@ -15,12 +16,12 @@ const Navbar = observer(() => {
                     <NavLink to={'/'}>Store</NavLink>
                 </div>
                 {user.isAuth ?
-                    <div className={styles.btns + ' ' + 'mr-5'}>
-                        <div>
-                            {user.email}
-                        </div>
+                    <div className={styles.btns + ' ' + 'mr-5' + ''}>
                         <div>
                             Admin
+                        </div>
+                        <div className={'mx-5'}>
+                            {user.user.email}
                         </div>
                     </div>
                     :

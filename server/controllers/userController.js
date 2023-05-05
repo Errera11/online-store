@@ -36,7 +36,6 @@ class UserController {
 
     async auth(user, req, res, next) {
         try {
-
             if(!user.id) throw user;
             const data = userService.auth(user)
             req.user = data.user;

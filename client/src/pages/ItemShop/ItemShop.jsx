@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import styles from './ItemShop.module.css'
 import {observer} from "mobx-react-lite";
-import {Context} from "../../App";
+import {Context} from "../../index";
 import Types from "./types/Types";
 import Brands from "./brands/Brands";
 import Items from "./items/Items";

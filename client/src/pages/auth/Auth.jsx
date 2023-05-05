@@ -4,7 +4,7 @@ import {ITEM_SHOP_ROUTE, SIGN_IN_ROUTE} from "../../utils/route_constants";
 import SignIn from "./signIn";
 import SignUp from "./signUp";
 import {signInApi, signUpApi} from "../../http/userAPI";
-import {Context} from "../../App";
+import {Context} from "../../index";
 
 const Auth = () => {
         const {user} = useContext(Context)

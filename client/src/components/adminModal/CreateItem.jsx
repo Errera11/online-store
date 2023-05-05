@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import Button from "../button/Button";
 import Modal from "../Modal";
-import {Context} from "../../App";
+import {Context} from "../../index";
 
 
 const CreateItem = ({onHide, show}) => {

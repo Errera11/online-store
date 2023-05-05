@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {privateRoutes, publicRoutes} from "../routes";
-import {Context} from "../App";
+import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 
 const AppRouter = observer(() => {

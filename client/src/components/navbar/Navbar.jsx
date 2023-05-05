@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import styles from "./Navbar.module.css"
 import {NavLink, useNavigate} from "react-router-dom";
 import Button from "../button/Button";
-import {Context} from "../../App";
+import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 
 const Navbar = observer(() => {

@@ -40,7 +40,7 @@ const ItemInfo = sequelize.define('item_info', {
     description: {type: DataTypes.STRING},
 })
 
-Item.hasMany(ItemInfo);
+Item.hasMany(ItemInfo, {as: 'info'});
 ItemInfo.belongsTo(Item);
 
 const Rating = sequelize.define('rating', {

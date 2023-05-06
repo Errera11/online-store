@@ -21,7 +21,7 @@ class UserService {
         const candidate = await User.findOne({where: {email}});
         if(candidate) throw ApiError.BadRequest({message: 'Email already in use ' + email});
         const hashedPassword = await bcrypt.hash(password, 3);
-        const user = await User.create({email, password: hashedPassword});
+        const user = await User.create({email, password: hashedPassword, role: 'ADMIN'});
         await Cart.create({userId: user.id});
         return jwtToken(user.id, user.email, user.role)
     }

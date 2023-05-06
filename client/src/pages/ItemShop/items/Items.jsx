@@ -11,7 +11,7 @@ const Items = ({items}) => {
             {items.map(item => (
                 <div onClick={() => navigate(ITEM_PAGE_ROUTE + '/' + item.id)}
                     key={item.id} className={styles.item}>
-                    <img className={'w-[190px] h-[190px] '} src={item.img}/>
+                    <img className={'w-[190px] h-[190px] '} src={process.env.REACT_APP_API_URL + '/' + item.image}/>
                     <div className={'flex flex-row'}>
                         <div className={'text-gray-500 mr-6'}>{item.name}</div>
                         <div className={'items-center'}>

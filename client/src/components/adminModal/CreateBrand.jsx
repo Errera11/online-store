@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import Button from "../button/Button";
 import Modal from "../Modal";
+import {postBrand} from "../../http/itemApi";
 
 const CreateBrand = ({onHide, show}) => {
     const [name, setName] = useState('')
+    const create = () => {
+        postBrand({name});
+    }
     return (
         <Modal onHide={onHide} show={show}>
             <div className={'mb-8'}>Create Brand</div>
@@ -11,7 +15,7 @@ const CreateBrand = ({onHide, show}) => {
                    placeholder={'Brand name'}
                    value={name}
                    onChange={e => setName(e.target.value)}/>
-            <Button>Create brand</Button>
+            <Button onClick={create}>Create brand</Button>
         </Modal>
     );
 };

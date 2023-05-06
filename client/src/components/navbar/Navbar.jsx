@@ -9,6 +9,13 @@ const Navbar = observer(() => {
 
     const navigate = useNavigate()
     const {user} = useContext(Context)
+
+    const logout = () => {
+        user.user = {};
+        user.isAuth = false;
+        localStorage.removeItem('token');
+    }
+
     return (
         <div className={styles.navbar}>
             <div className={styles.container}>
@@ -16,20 +23,22 @@ const Navbar = observer(() => {
                     <NavLink to={'/'}>Store</NavLink>
                 </div>
                 {user.isAuth ?
-                    <div className={styles.btns + ' ' + 'mr-5' + ''}>
+                    <div className={styles.btns + ' ' + 'mr-5' + ' ' + 'items-center'}>
                         <div>
-                            Admin
+                            <NavLink to={'/admin'}>Admin</NavLink>
+
                         </div>
                         <div className={'mx-5'}>
                             {user.user.email}
                         </div>
+                        <Button onClick={logout}>Sign Out</Button>
                     </div>
                     :
                     <div className={styles.btns}>
-                        <div className={styles.btn} onClick={() => navigate('/signIn')}>
+                        <div onClick={() => navigate('/signIn')}>
                             <Button>Sign In</Button>
                         </div>
-                        <div className={styles.btn} onClick={() => navigate('/signUp')}>
+                        <div onClick={() => navigate('/signUp')}>
                             <Button>Sign Up</Button>
                         </div>
                     </div>

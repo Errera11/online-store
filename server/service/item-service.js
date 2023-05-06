@@ -1,4 +1,4 @@
-const {Item} = require('../db/models/models')
+const {Item, ItemInfo} = require('../db/models/models')
 const path = require('path');
 const uuid = require('uuid')
 
@@ -12,7 +12,7 @@ class ItemService {
     }
 
     async getOne(id) {
-        return await Item.findOne({where: {id}});
+        return await Item.findOne({where: {id}, include: {model: ItemInfo, as: 'info'}});
     }
 
     async getAll({limit, page, typeId, brandId}) {

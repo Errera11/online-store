@@ -5,6 +5,7 @@ import {BrowserRouter} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {checkToken} from "./http/userAPI";
 import {Context} from "./index";
+import Loader from "./components/loader/Loader";
 
 
 
@@ -28,7 +29,7 @@ function App() {
         }
     }, [])
 
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <Loader />
 
     return (
             <BrowserRouter>

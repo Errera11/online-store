@@ -3,11 +3,11 @@
 }
 
 .container {
-    @apply z-10 bg-blue-50 fixed flex justify-between items-center w-full;
+    @apply z-10 bg-blue-50 fixed flex justify-between items-center w-full box-content;
 }
 
 .btns {
-    @apply flex;
+    @apply flex mx-5;
 }
 
 
@@ -15,6 +15,3 @@
     @apply m-[18px];
 }
 
-.btn {
-    @apply m-[18px];
-}

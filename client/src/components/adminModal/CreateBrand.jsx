@@ -6,7 +6,7 @@ import {postBrand} from "../../http/itemApi";
 const CreateBrand = ({onHide, show}) => {
     const [name, setName] = useState('')
     const create = () => {
-        postBrand({name});
+        postBrand({name}).then(data => onHide());
     }
     return (
         <Modal onHide={onHide} show={show}>

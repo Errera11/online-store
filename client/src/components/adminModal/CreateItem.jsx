@@ -2,13 +2,14 @@ import React, {useContext, useState} from 'react';
 import Button from "../button/Button";
 import Modal from "../Modal";
 import {Context} from "../../index";
+import {postItem} from "../../http/itemApi";
 
 
 const CreateItem = ({onHide, show}) => {
     const {devices} = useContext(Context)
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
-    const [file, setFile] = useState()
+    const [image, setImage] = useState()
     const [brand, setBrand] = useState(0)
     const [type, setType] = useState(0)
     const [info, setInfo] = useState([[{id: new Date(), title: '', description: ''}]])
@@ -19,6 +20,17 @@ const CreateItem = ({onHide, show}) => {
     }
     const addInfo = () => {
         setInfo([...info, {id: new Date(), title: '', description: ''}]);
+    }
+
+    const createItem = () => {
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('price', price);
+        formData.append('image', image);
+        formData.append('brand', brand.toString());
+        formData.append('type', type.toString());
+        formData.append('info', JSON.stringify(info));
+        postItem(formData).then(data => onHide());
     }
 
     return (
@@ -33,7 +45,7 @@ const CreateItem = ({onHide, show}) => {
                    value={price}
                    onChange={e => setPrice(e.target.value)}/>
             <input className={'p-2 m-4 rounded-2xl'} type={'file'}
-                   onChange={e => setFile(e.target.files[0])}/>
+                   onChange={e => setImage(e.target.files[0])}/>
             <div className={'p-2 m-4 rounded-2xl'}>
                 <select
                     className={'p-4 border-none w-2/3'}
@@ -74,7 +86,7 @@ const CreateItem = ({onHide, show}) => {
                        setInfo([...info, item])
                    }}/>
             <Button onClick={() => addInfo()}>Add characteristic</Button>
-            <Button>Create item</Button>
+            <Button onClick={() => createItem()}>Create item</Button>
         </Modal>
     );
 };

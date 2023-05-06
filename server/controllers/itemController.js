@@ -4,6 +4,7 @@ class ItemController {
 
     async create(req, res, next) {
         try {
+            console.log(req.body)
             const item = await itemService.create(req.body, req.files.image)
             res.status(200).json(item);
         } catch(e) {

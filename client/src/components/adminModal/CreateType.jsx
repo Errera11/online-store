@@ -6,7 +6,7 @@ import {postType} from '../../http/itemApi'
 const CreateType = ({onHide, show}) => {
     const [name, setName] = useState('')
     const create = () => {
-        postType({name});
+        postType({name}).then(data => onHide());
     }
     return (
         <Modal onHide={onHide} show={show}>

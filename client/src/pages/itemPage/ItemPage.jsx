@@ -5,29 +5,18 @@ import {useParams} from "react-router-dom";
 import {getOneItem} from "../../http/itemApi";
 
 const ItemPage = () => {
-    // const item = {
-    //     id: 1,
-    //     name: 'example',
-    //     price: 1000,
-    //     rating: 5,
-    //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYz2huNWs1qzjomU38a88RbCqDoddasQv6Gw&usqp=CAU'
-    // };
-    // const description = [
-    //     {id: 1, title: 'example1', description: 'example11'},
-    //     {id: 2, title: 'example2', description: 'example22'},
-    //     {id: 3, title: 'example3', description: 'example33'},
-    //     {id: 4, title: 'example4', description: 'example44'}
-    // ]
+
     const [item, setItem] = useState({});
     const {id} = useParams();
     useEffect(() => {
-        getOneItem(id).then(response => console.log(response))
+        getOneItem(id).then(response => setItem(response.data))
     }, [])
+    console.log(item)
     return (
         <div className={styles.container}>
             <div className={styles.view}>
                 <div>
-                    <img className={'w-full h-full'} src={item.img}/>
+                    <img className={'w-full h-full'} src={process.env.REACT_APP_API_URL + '/' + item.image}/>
                 </div>
                 <div className={styles.rate}>
                     <div className={'text-center text-2xl'}>{item.name}</div>
@@ -45,16 +34,16 @@ const ItemPage = () => {
                 </div>
                 <div className={'flex flex-column w-full'}>
                     <div className={'w-full'}>
-                        {/*{item.description.map(item =>*/}
-                        {/*    <div >*/}
-                        {/*        <div className={'p-5 bg-gray-100'}>*/}
-                        {/*            {item.name}*/}
-                        {/*        </div>*/}
-                        {/*        <div className={'p-5 bg-gray-200'}>*/}
-                        {/*            {item.description}*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*)}*/}
+                        {item.info?.map(item =>
+                            <div>
+                                <div className={'p-5 bg-gray-100'}>
+                                    {item.name}
+                                </div>
+                                <div className={'p-5 bg-gray-200'}>
+                                    {item.description}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

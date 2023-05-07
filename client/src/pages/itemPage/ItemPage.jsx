@@ -11,7 +11,7 @@ const ItemPage = () => {
     useEffect(() => {
         getOneItem(id).then(response => setItem(response.data))
     }, [])
-    console.log(item)
+
     return (
         <div className={styles.container}>
             <div className={styles.view}>
@@ -37,7 +37,7 @@ const ItemPage = () => {
                         {item.info?.map(item =>
                             <div>
                                 <div className={'p-5 bg-gray-100'}>
-                                    {item.name}
+                                    {item.title}
                                 </div>
                                 <div className={'p-5 bg-gray-200'}>
                                     {item.description}

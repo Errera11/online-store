@@ -9,21 +9,26 @@
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/0.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/1.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/11.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/12.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/13.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/14.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/15.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/16.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/16.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/2.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/3.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/4.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/5.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/8.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/7.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/9.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/adminModal/CreateBrand.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/adminModal/CreateBrand.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/adminModal/CreateItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/adminModal/CreateItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/adminModal/CreateType.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/adminModal/CreateType.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ItemShop/items/Items.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemShop/items/Items.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ItemShop/items/Items.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemShop/items/Items.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/itemPage/ItemPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemPage/ItemPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/itemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/itemController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/service/item-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/service/item-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +93,7 @@
       <workItem from="1683053792225" duration="686000" />
       <workItem from="1683054859081" duration="692000" />
       <workItem from="1683103377049" duration="2055000" />
-      <workItem from="1683314702434" duration="16962000" />
+      <workItem from="1683314702434" duration="25161000" />
     </task>
     <servers />
   </component>

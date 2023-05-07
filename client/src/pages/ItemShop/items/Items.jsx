@@ -11,14 +11,14 @@ const Items = ({items}) => {
             {items.map(item => (
                 <div onClick={() => navigate(ITEM_PAGE_ROUTE + '/' + item.id)}
                     key={item.id} className={styles.item}>
-                    <img className={'w-[190px] h-[190px] '} src={process.env.REACT_APP_API_URL + '/' + item.image}/>
-                    <div className={'flex flex-row'}>
+                    <img className={'w-full h-5/6'} src={process.env.REACT_APP_API_URL + '/' + item.image}/>
+                    <div className={'flex flex-row '}>
                         <div className={'text-gray-500 mr-6'}>{item.name}</div>
                         <div className={'items-center'}>
                             <div>
                                 Rating: {item.rating}
                             </div>
-                            <img className={'ml-2 w-[15px] h-[15px] items-center'} src={star}/>
+                            <img className={'w-[15px] h-[15px] items-center'} src={star}/>
                         </div>
                     </div>
                     <div>Price: {item.price}$</div>

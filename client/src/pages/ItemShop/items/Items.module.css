@@ -1,5 +1,5 @@
 .item {
-    @apply cursor-pointer w-[210px] h-[290px] justify-center;
+    @apply cursor-pointer w-[210px] h-[290px] justify-center m-8;
 }
 
 .item div {
@@ -7,5 +7,5 @@
 }
 
 .container {
-    @apply flex flex-wrap ;
+    @apply flex flex-wrap;
 }

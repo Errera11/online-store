@@ -10,8 +10,8 @@ const CreateItem = ({onHide, show}) => {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [image, setImage] = useState()
-    const [brand, setBrand] = useState(0)
-    const [type, setType] = useState(0)
+    const [brand, setBrand] = useState(1)
+    const [type, setType] = useState(1)
     const [info, setInfo] = useState([[{id: new Date(), title: '', description: ''}]])
 
     const deleteInfo = (id) => {
@@ -27,10 +27,12 @@ const CreateItem = ({onHide, show}) => {
         formData.append('name', name);
         formData.append('price', price);
         formData.append('image', image);
-        formData.append('brand', brand.toString());
-        formData.append('type', type.toString());
-        formData.append('info', JSON.stringify(info));
-        postItem(formData).then(data => onHide());
+        formData.append('brandId', brand.toString());
+        formData.append('typeId', type.toString());
+        formData.append('info', JSON.stringify(info.splice(0, info.length - 1)));
+        postItem(formData).then(data => {
+            onHide()
+        });
     }
 
     return (
@@ -68,7 +70,7 @@ const CreateItem = ({onHide, show}) => {
                 <div className={'flex flex-col '}>{info.map((item, index) => {
                     if(index + 1 == info.length) return
                     return <div key={item.id} className={'flex flex-row m-2 justify-center'}>
-                        <div>{item.title}:      {item.description}  </div>
+                        <div>{item.title}:      {item.description}</div>
                         <div className={'cursor-pointer ml-2'} onClick={() => deleteInfo(item.id)}>X</div>
                     </div>
                 })}</div>

@@ -5,10 +5,15 @@ const uuid = require('uuid')
 class ItemService {
 
     async create(body, image) {
-        const {name, price, typeId, brandId} = body;
+        const {name, price, typeId, brandId, info} = body;
         const filename = uuid.v4() + '.jpg';
         await image.mv(path.resolve(__dirname, '..', 'static', filename));
-        return await Item.create({name, price, typeId, brandId, image: filename})
+        const item = await Item.create({name, price, typeId, brandId, image: filename, info});
+        console.log(item)
+        JSON.parse(info).forEach(i => {
+            ItemInfo.create({itemId: item.id, title: i.title, description: i.description})
+        })
+        return item;
     }
 
     async getOne(id) {

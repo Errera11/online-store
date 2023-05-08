@@ -4,7 +4,6 @@ class ItemController {
 
     async create(req, res, next) {
         try {
-            console.log(req.body)
             const item = await itemService.create(req.body, req.files.image)
             res.status(200).json(item);
         } catch(e) {
@@ -24,8 +23,8 @@ class ItemController {
 
     async getAll(req, res, next) {
         try {
-            const {limit, page} = req.query;
-            const {typeId, brandId} = req.query;
+            const {limit, page, typeId, brandId} = req.query;
+
             const items= await itemService.getAll({limit, page,
                 typeId, brandId})
             res.status(200).json(items);

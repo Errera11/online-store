@@ -6,8 +6,10 @@ export const getBrands = async () => {
 export const getTypes = async () => {
     return await $host.get('/store/type')
 }
-export const getItems = async () => {
-    return await $host.get('/store/item')
+export const getItems = async (limit = 1, page = 1, typeId, brandId) => {
+    return await $host.get('/store/item', {params: {
+            limit, page, typeId, brandId
+        }})
 }
 export const getOneItem = async (id) => {
     return await $host.get('/store/item/' + id)

@@ -8,9 +8,26 @@ export class DeviceStore {
         this._types = []
         this._selectedBrand = {};
         this._selectedType = {};
+        this._currentPage = 1;
+        this._devicesTotalCount = 0;
         makeAutoObservable(this)
     }
 
+    get currentPage() {
+        return this._currentPage;
+    }
+
+    set currentPage(value) {
+        this._currentPage = value;
+    }
+
+    get devicesTotalCount() {
+        return this._devicesTotalCount;
+    }
+
+    set devicesTotalCount(value) {
+        this._devicesTotalCount = value;
+    }
     get devices() {
         return this._devices;
     }

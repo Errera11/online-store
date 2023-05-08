@@ -13,3 +13,7 @@
 .items {
     @apply ml-auto mr-14 w-3/4 mt-20;
 }
+
+.paginator {
+    @apply flex justify-center;
+}

@@ -1,0 +1,11 @@
+.container {
+
+}
+
+.pages {
+    @apply flex flex-row;
+}
+
+.item {
+    @apply cursor-pointer p-2 m-2 border-solid border-2 border-blue-50 rounded-2xl hover:bg-blue-50 duration-700;
+}

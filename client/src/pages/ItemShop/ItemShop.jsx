@@ -7,6 +7,8 @@ import Brands from "./brands/Brands";
 import Items from "./items/Items";
 import {getBrands, getItems, getTypes} from "../../http/itemApi";
 import Paginator from "../../components/paginator/Paginator";
+import Selected from "../../components/selected/Selected";
+import Button from "../../components/button/Button";
 
 const ItemShop = observer(() => {
     const {devices} = useContext(Context);
@@ -45,6 +47,11 @@ const ItemShop = observer(() => {
         devices.selectedType = type;
     }
 
+    const resetFilter = () => {
+        devices.selectedType = {};
+        devices.selectedBrand = {};
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.brands}>
@@ -52,6 +59,9 @@ const ItemShop = observer(() => {
                     brands={devices.brands}
                     setBrand={setBrand}
                     selectedBrandId={devices.selectedBrand.id}/>
+                <div className={'mr-5'}>
+                    <Button onClick={resetFilter}>Reset filter</Button>
+                </div>
             </div>
             <div className={styles.types}>
                 <Types

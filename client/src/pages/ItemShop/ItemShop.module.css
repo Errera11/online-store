@@ -3,7 +3,7 @@
 }
 
 .brands {
-    @apply ml-5 w-11/12 bg-blue-50 rounded-2xl;
+    @apply ml-5 w-11/12 bg-blue-50 rounded-2xl flex justify-between items-center;
 }
 
 .types {

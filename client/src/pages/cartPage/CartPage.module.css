@@ -1,0 +1,15 @@
+.container {
+    @apply w-full h-full flex justify-center;
+}
+
+.items {
+
+}
+
+.item img {
+    @apply max-h-[150px] object-cover cursor-pointer ;
+}
+
+.item {
+    @apply flex justify-center flex-col items-center w-[300px] h-[250px] border-2 border-blue-50 rounded-l m-8;
+}

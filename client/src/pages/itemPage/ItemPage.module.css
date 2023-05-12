@@ -12,7 +12,7 @@
 
 
 .price {
-    @apply flex flex-col justify-between p-10 items-center ;
+    @apply flex flex-col justify-between p-10 items-center;
 }
 
 .rate {

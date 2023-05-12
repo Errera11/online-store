@@ -24,7 +24,6 @@ class ItemController {
     async getAll(req, res, next) {
         try {
             const {limit, page, typeId, brandId} = req.query;
-
             const items= await itemService.getAll({limit, page,
                 typeId, brandId})
             res.status(200).json(items);

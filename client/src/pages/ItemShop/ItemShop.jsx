@@ -9,12 +9,10 @@ import {getBrands, getItems, getTypes} from "../../http/itemApi";
 import Paginator from "../../components/paginator/Paginator";
 import Selected from "../../components/selected/Selected";
 import Button from "../../components/button/Button";
+import Loader from "../../components/loader/Loader";
 
 const ItemShop = observer(() => {
     const {devices} = useContext(Context);
-    const [items, setItems] = useState([]);
-    const [types, setTypes] = useState([]);
-    const [brands, setBrands] = useState([]);
     const [isLoading, setLoading] = useState(true)
     const [pagesCount, setPagesCount] = useState(1);
 
@@ -37,7 +35,7 @@ const ItemShop = observer(() => {
             devices.devices = response.data.rows;
             devices.devicesTotalCount = response.data.count;
             setPagesCount(Math.ceil(devices.devicesTotalCount / 2))
-        })
+        }).finally(setLoading(false))
     }, [devices.currentPage, devices.selectedType, devices.selectedBrand])
     const setBrand = (brand) => {
         devices.selectedBrand = brand;
@@ -51,6 +49,8 @@ const ItemShop = observer(() => {
         devices.selectedType = {};
         devices.selectedBrand = {};
     }
+
+    if(isLoading) return <Loader />
 
     return (
         <div className={styles.container}>

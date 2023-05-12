@@ -7,7 +7,6 @@ import {observer} from "mobx-react-lite";
 import {ADMIN_ROUTE, CART_ROUTE} from "../../utils/route_constants";
 
 const Navbar = observer(() => {
-
     const navigate = useNavigate()
     const {user} = useContext(Context)
 

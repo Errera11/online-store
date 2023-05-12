@@ -4,7 +4,6 @@ import {observer} from "mobx-react-lite";
 import styles from './Types.module.css'
 
 const Types = observer(({types, selectedTypeId, setType}) => {
-
     return (
         <div className={styles.container}>
             {types.map(type => (

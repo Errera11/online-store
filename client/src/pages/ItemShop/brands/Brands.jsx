@@ -4,7 +4,6 @@ import Selected from "../../../components/selected/Selected";
 import styles from './Brands.module.css'
 
 const Brands = observer(({brands, setBrand, selectedBrandId}) => {
-
     const resetFilter = () => {
 
     }

@@ -6,7 +6,6 @@ import {getOneItem} from "../../http/itemApi";
 import {addCartItem, getCartItems} from "../../http/cartApi";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
-import Button from "../../components/button/Button";
 
 const ItemPage = observer(() => {
     const [item, setItem] = useState({});

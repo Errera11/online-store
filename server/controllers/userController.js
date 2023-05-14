@@ -1,6 +1,7 @@
 const userService = require('../service/user-service');
 const {validationResult} = require("express-validator");
 const ApiError = require("../exceptions/ApiError");
+const cartService = require("../service/cart-service");
 
 
 class UserController {
@@ -40,6 +41,16 @@ class UserController {
             const data = userService.auth(user)
             req.user = data.user;
             res.json(data.token)
+        } catch(e) {
+            next(e)
+        }
+    }
+
+    async getUserRates(req, res, next) {
+        try {
+            const {userId} = req.query;
+            const rates = await cartService.getUserRates(userId);
+            res.status(200).json(rates)
         } catch(e) {
             next(e)
         }

@@ -21,6 +21,8 @@ class CartService {
         const cart = await Cart.findOne({where: {userId}});
         return await CartItem.destroy({where: {cartId: cart.id, itemId}})
     }
+
+
 }
 
 module.exports = new CartService();

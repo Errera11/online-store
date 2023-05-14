@@ -3,7 +3,7 @@
 }
 
 .container .view div {
-    @apply w-4/5 mx-10;
+    @apply w-4/5 mx-10 box-content;
 }
 
 .view {

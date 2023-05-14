@@ -13,3 +13,4 @@ export const addCartItem = async (userId, itemId) => {
 export const deleteCartItem = async (userId, itemId) => {
     return await $authHost.delete('/store' + CART_ROUTE, {params: {userId, itemId}})
 }
+
